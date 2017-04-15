@@ -1,0 +1,71 @@
+package headers;
+
+
+
+message CreateAccount {
+  required string userName = 1;
+  required string password = 2;
+  }
+
+message CreateAccountSuccess {
+    required string userID = 1;
+  }
+
+message CreateAccountFailure {
+    enum reason
+  {
+		ACCOUNT_ALREADY_EXISTS = -12312;
+		INVALID_PASSWORD = -32132;
+		INTERNAL_SERVER_ERROR = -12721;
+  }
+  required reason errorReason = 1;
+}
+
+message AuthenticateLogin {
+	required string userName = 1;
+	required string password = 2;
+}
+
+message AuthenticateSuccess {
+	required string userID = 1;
+	required string creationDate = 2;
+}
+
+message AuthenticateFailure {
+	enum reason
+	{
+		INVALID_CREDENTIALS = -14714;
+		INTERNAL_SERVER_ERROR = -12721;
+	}
+	required reason errorReason = 1;
+}
+
+message Message{
+	required string userName = 1;
+	required string roomName = 2;
+	required string message = 3;
+}
+
+message Container{
+	required int32 packetLength = 1;
+	enum requestID
+  {
+		ID_CREATE = -22022;
+		ID_CREATE_SUCCESS = -12645;
+		ID_CREATE_FAIL = -16452;
+		ID_AUTHENTICATE_SUCCESS = -19875;
+		ID_AUTHENTICATE_FAILURE = -15789;
+		ID_LOGIN = -12121;
+		ID_JOIN = -22222;
+		ID_LEAVE = -22250;
+		ID_MESSAGE = -11111;
+  }
+  required requestID ID = 2;
+  optional Message message = 3;
+  optional CreateAccount create = 4;
+  optional CreateAccountFailure createFail = 5;
+  optional CreateAccountSuccess createSuccess = 6;
+  optional AuthenticateLogin auth = 7;
+  optional AuthenticateFailure authFail = 8;
+  optional AuthenticateSuccess authSuccess = 9;
+}

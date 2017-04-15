@@ -1,0 +1,9 @@
+﻿Build started 2016-12-05 2:38:32 PM.
+     1>Project "C:\Users\user\Desktop\Fanshawe\Networking\RyanHammond-networking-project-2-d9fc46feecb2\ClientServerNonBlocking\Server\Server.vcxproj" on node 3 (Build target(s)).
+     1>Link:
+         Server.vcxproj -> C:\Users\user\Desktop\Fanshawe\Networking\RyanHammond-networking-project-2-d9fc46feecb2\ClientServerNonBlocking\Debug\Server.exe
+     1>Done Building Project "C:\Users\user\Desktop\Fanshawe\Networking\RyanHammond-networking-project-2-d9fc46feecb2\ClientServerNonBlocking\Server\Server.vcxproj" (Build target(s)).
+
+Build succeeded.
+
+Time Elapsed 00:00:00.06
